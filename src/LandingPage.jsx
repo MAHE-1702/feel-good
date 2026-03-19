@@ -442,7 +442,7 @@ function Hero() {
             {[
               'Release old emotional patterns',
               'Reconnect with yourself',
-              'Step into a stronger, more confident you',
+              'Step into a stronger, more confident version of you',
             ].map(b => (
               <div key={b} style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
                 <span style={{ color: 'var(--color-accent)', fontWeight: 700, fontSize: '1rem' }}>✦</span>
