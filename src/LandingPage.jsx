@@ -328,13 +328,13 @@ function Navbar() {
     >
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         {/* Logo */}
-        <a href="#home" style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', textDecoration: 'none' }} aria-label="Feel Good Center">
+        <a href="#home" style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', textDecoration: 'none' }} aria-label="Feel Good Cafe">
           <div style={{ width: 38, height: 38, borderRadius: '50%', background: 'var(--color-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18" />
             </svg>
           </div>
-          <span style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, fontSize: '1.05rem', color: scrolled ? 'var(--color-text)' : '#fff', transition: 'color 300ms ease' }}>Feel Good Center</span>
+          <span style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, fontSize: '1.05rem', color: scrolled ? 'var(--color-text)' : '#fff', transition: 'color 300ms ease' }}>Feel Good Cafe</span>
         </a>
 
         {/* Desktop Links */}
@@ -408,12 +408,12 @@ function Hero() {
           <p className="section-label fade-up" style={{ color: 'var(--color-accent)', letterSpacing: '0.22em' }}> Wellness for Women</p>
 
           <h1 className="fade-up delay-1" style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, fontSize: 'clamp(2.2rem, 4.5vw, 3.6rem)', color: '#fff', lineHeight: 1.15, margin: '0.4rem 0 1rem' }}>
-            Break Free. Heal.<br />Become Stronger.
+            Break Free... Heal...<br />Become Stronger...
           </h1>
 
           <p className="fade-up delay-2" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '1.05rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.8, maxWidth: 480, marginBottom: '0.5rem', fontStyle: 'italic' }}>
             If you feel stuck in the same emotional patterns…<br />
-            If you're trying to stay positive, but something keeps pulling you back…
+            If you're trying to stay positive... but something keeps pulling you back…
           </p>
 
           <p className="fade-up delay-2" style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.15rem', color: 'var(--color-accent)', fontWeight: 600, marginBottom: '1.4rem' }}>
@@ -422,7 +422,7 @@ function Hero() {
 
           <p className="fade-up delay-3" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.97rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.8, maxWidth: 480, marginBottom: '2rem' }}>
             Many women silently carry this weight — feeling drained, disconnected,
-            or trapped in repeating struggles. Your life won't change by waiting.
+            or trapped in repeated struggles. Your life won't change by waiting.
             It changes the moment you decide.
           </p>
 
@@ -583,7 +583,7 @@ function Hero() {
                   Psychological &amp; Career Counselling
                 </p>
                 <p style={{ fontFamily: "'Playfair Display', serif", fontSize: '0.92rem', color: '#fff', margin: 0, lineHeight: 1.3 }}>
-                  Feel Good Center
+                  Feel Good Cafe
                 </p>
               </div>
             </div>
@@ -977,7 +977,7 @@ function Footer() {
                   <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18" />
                 </svg>
               </div>
-              <span style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, fontSize: '1.05rem', color: 'var(--color-text)' }}>Feel Good Center</span>
+              <span style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, fontSize: '1.05rem', color: 'var(--color-text)' }}>Feel Good Cafe</span>
             </div>
             <p style={{ fontSize: '0.88rem', color: 'var(--color-muted)', lineHeight: 1.75, maxWidth: 280, marginBottom: '1.5rem' }}>
               Compassionate care for every mind.
@@ -1032,7 +1032,7 @@ function Footer() {
 
         {/* Bottom bar */}
         <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', paddingTop: '2rem', gap: '1rem' }}>
-          <p style={{ fontSize: '0.82rem', color: 'var(--color-muted)' }}>© Feel Good Center. All rights reserved.</p>
+          <p style={{ fontSize: '0.82rem', color: 'var(--color-muted)' }}>© Feel Good Cafe. All rights reserved.</p>
           <div style={{ display: 'flex', gap: '1.5rem' }}>
             {/* {['Privacy Policy', 'Terms of Use'].map(l => (
               <a key={l} href="#" style={{ fontSize: '0.82rem', color: 'var(--color-muted)', textDecoration: 'none', transition: 'color 200ms' }}
