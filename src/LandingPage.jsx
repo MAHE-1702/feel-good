@@ -1,17 +1,8 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 
 /* ─────────────────────────────────────────────
-   GOOGLE FORM INTEGRATION
-   (Replace these with your actual form action URL and entry IDs)
+   GLOBAL STYLES (injected once)
 ───────────────────────────────────────────── */
-
-// const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSfAONv3v8xFhC21J-8AuK3uxVM1x9OBZI2chixJeq4T3ViCYw/formResponse';
-const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/u/0/d/e/YOUR_REAL_ID_HERE/formResponse';
-const ENTRY_NAME = 'entry.2009000657';
-
-const ENTRY_AGE = 'entry.776642757';
-const ENTRY_ISSUE = 'entry.1610320046';
-const ENTRY_PAYMENT = 'entry.1094963558';
 
 /* ─────────────────────────────────────────────
    GLOBAL STYLES (injected once)
@@ -1068,7 +1059,7 @@ function RegisterPopup() {
   const [status, setStatus] = useState('idle'); // idle, submitting, success, error
 
   const [form, setForm] = useState({
-    name: '', age: '', issue: '', payment: 'no'
+    name: '', age: '', email: '', phone: '', issue: '', payment: 'Yes'
   });
 
   useEffect(() => {
@@ -1085,7 +1076,14 @@ function RegisterPopup() {
     };
   }, []);
 
-  const close = useCallback(() => setVisible(false), []);
+  const close = useCallback(() => {
+    setVisible(false);
+    // Reset state after popup closes so it's fresh for next time
+    setTimeout(() => {
+      setStatus('idle');
+      setForm({ name: '', age: '', email: '', phone: '', issue: '', payment: 'Yes' });
+    }, 300);
+  }, []);
 
   const handleOverlayClick = useCallback((e) => {
     if (e.target === e.currentTarget && status !== 'submitting') close();
@@ -1096,10 +1094,12 @@ function RegisterPopup() {
 
     const formData = new URLSearchParams();
 
-    formData.append("entry.2009000657", form.name);
-    formData.append("entry.776642757", form.age);
-    formData.append("entry.1610320046", form.issue);
-    formData.append("entry.1094963558", form.payment);
+    formData.append("entry.2005620554", form.name);
+    formData.append("entry.1045781291", form.email);
+    formData.append("entry.1166974658", form.phone);
+    formData.append("entry.1065046570", form.age);
+    formData.append("entry.839337160", form.issue);
+    formData.append("entry.1615171599", form.payment);
 
     // Required radio helper
     // formData.append("entry.1094963558_sentinel", "");
@@ -1110,7 +1110,7 @@ function RegisterPopup() {
     // formData.append("fbzx", Date.now().toString());
 
     await fetch(
-      "https://docs.google.com/forms/d/e/1FAIpQLSfAONv3v8xFhC21J-8AuK3uxVM1x9OBZI2chixJeq4T3ViCYw/formResponse",
+      "https://docs.google.com/forms/d/e/1FAIpQLSdCWQCT94PpsQGtWwfsvfbwF29FKlI67ueKCamKkrBBORp2-w/formResponse",
       {
         method: "POST",
         mode: "no-cors",
@@ -1212,8 +1212,19 @@ function RegisterPopup() {
                 </div>
               </div>
 
+              <div style={{ display: 'flex', gap: '1rem' }}>
+                <div style={{ flex: 1 }}>
+                  <label className="popup-label">Email</label>
+                  <input required type="email" name="email" value={form.email} onChange={handleChange} className="popup-input" placeholder="Your email" disabled={status === 'submitting'} />
+                </div>
+                <div style={{ flex: 1 }}>
+                  <label className="popup-label">Phone Number</label>
+                  <input required type="tel" name="phone" value={form.phone} onChange={handleChange} className="popup-input" placeholder="Your phone number" disabled={status === 'submitting'} />
+                </div>
+              </div>
+
               <div>
-                <label className="popup-label">What is your major issue?</label>
+                <label className="popup-label">Share one most painful memory</label>
                 <textarea required name="issue" value={form.issue} onChange={handleChange} className="popup-input" rows="2" placeholder="Briefly describe what you're feeling..." style={{ resize: 'none' }} disabled={status === 'submitting'}></textarea>
               </div>
 
@@ -1221,11 +1232,11 @@ function RegisterPopup() {
                 <label className="popup-label">Have you done your payment?</label>
                 <div className="popup-radio-group">
                   <label className="popup-radio-label">
-                    <input type="radio" name="payment" value="yes" checked={form.payment === 'yes'} onChange={handleChange} disabled={status === 'submitting'} />
+                    <input type="radio" name="payment" value="Yes" checked={form.payment === 'Yes'} onChange={handleChange} disabled={status === 'submitting'} />
                     Yes
                   </label>
                   <label className="popup-radio-label">
-                    <input type="radio" name="payment" value="no" checked={form.payment === 'no'} onChange={handleChange} disabled={status === 'submitting'} />
+                    <input type="radio" name="payment" value="No" checked={form.payment === 'No'} onChange={handleChange} disabled={status === 'submitting'} />
                     No
                   </label>
                 </div>
